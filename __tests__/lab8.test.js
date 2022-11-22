@@ -39,6 +39,7 @@ describe('Basic user flow for Website', () => {
     // Right now this function is only checking the first <product-item> it found, make it so that
     // it checks every <product-item> it found
     for(let i=0;i<20;i++){
+      console.log(`Checking product item ${i+1}/${prodItems.length}`);
       data = await prodItems[i].getProperty('data');
       plainValue = await data.jsonValue();
       if (plainValue.title.length == 0) { allArePopulated = false; }
